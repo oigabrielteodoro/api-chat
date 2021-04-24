@@ -10,9 +10,15 @@ class SettingsController {
 
     const settingsService = new SettingsService();
 
-    const settings = await settingsService.create(body);
+    try {
+      const settings = await settingsService.create(body);
 
-    return response.json(settings);
+      return response.json(settings);
+    } catch (error) {
+      return response.status(400).json({
+        message: error.message,
+      });
+    }
   }
 }
 
