@@ -29,6 +29,12 @@ class ConnectionsService {
 
     return connection;
   }
+
+  async findByUserId(user_id: string): Promise<Connection | undefined> {
+    return this.connectionsRepository.findOne({
+      user_id
+    });
+  }
 }
 
 export { ConnectionsService };

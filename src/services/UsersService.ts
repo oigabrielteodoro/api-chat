@@ -28,6 +28,12 @@ class UsersService {
 
     return user;
   }
+
+  async findByEmail(email: string): Promise<User | undefined> {
+    return this.usersRepository.findOne({
+      email,
+    });
+  }
 }
 
 export { UsersService };
