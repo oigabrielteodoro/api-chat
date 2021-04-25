@@ -10,7 +10,7 @@ class Message {
   id: string;
 
   @Column()
-  admin_id: string;
+  admin_id?: string;
 
   @Column()
   text: string;
